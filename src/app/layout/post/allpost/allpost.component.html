@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="mb-4 text-right">
+    <button class="btn btn-primary">Add New Post</button>
+  </div>
+    <div class="col-sm-4 mb-3" *ngFor="let item of posts">
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{item.title | splice:20}}</h5>
+              <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+              <p class="card-text">{{item.body | splice:40}}</p>
+              <a [routerLink]="[item.id]" class="card-link">View Post</a> 
+              <a [routerLink]="['edit/'+item.id]" class="card-link">Edit</a> 
+            </div>
+          </div>
+    </div>
+</div>

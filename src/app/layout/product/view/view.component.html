@@ -1,0 +1,50 @@
+<button class="btn btn-primary mb-3" routerLink="/products/list">Back</button>
+<div class="row" *ngIf="productData">
+    <div class="col-sm-5">
+        <ngb-carousel #carousel [interval]="4000" [pauseOnHover]="false" [pauseOnFocus]="true">
+            <ng-template ngbSlide *ngFor="let img of productData.images; index as i">
+                <div class="picsum-img-wrapper">
+                    <img [src]="img" alt="My image {{i + 1}} description">
+                  </div>
+            </ng-template>
+          </ngb-carousel>
+    </div>
+    <div class="col-sm-7">
+        <table class="table"> 
+            <tbody>
+              <tr>
+                <th scope="row">Title</th>
+                <td>{{ productData.title }}</td> 
+              </tr> 
+              <tr>
+                <th scope="row">brand</th>
+                <td>{{ productData.brand }}</td> 
+              </tr>
+              <tr>
+                <th scope="row">rating</th>
+                <td>{{ productData.rating }}</td> 
+              </tr>
+              <tr>
+                <th scope="row">category</th>
+                <td>{{ productData.category }}</td> 
+              </tr> 
+              <tr>
+                <th scope="row">description</th>
+                <td>{{ productData.description }}</td> 
+              </tr> 
+              <tr>
+                <th scope="row">discountPercentage</th>
+                <td>{{ productData.discountPercentage }}</td> 
+              </tr> 
+              <tr>
+                <th scope="row">price</th>
+                <td>{{ productData.price }}</td> 
+              </tr> 
+              <tr>
+                <th scope="row">Stock</th>
+                <td>{{ productData.stock }}</td> 
+              </tr> 
+            </tbody>
+          </table>
+    </div>
+</div>

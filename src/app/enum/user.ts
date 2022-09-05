@@ -1,0 +1,5 @@
+export enum UserEnum {
+    USER_LIST = "USER_LIST",
+    USER_LIST_SUCCESS = "USER_LIST SUCCESS",
+    USER_LIST_FAIL = "USER_LIST FAIL"
+}
